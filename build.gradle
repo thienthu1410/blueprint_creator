@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        gpr(MavenPublication) {
+            from components.java
+            groupId = 'io.github.thienthu1410'
+            artifactId = 'blueprint_creator'
+            version = '1.0.1'
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/thienthu1410/blueprint_creator")
+            credentials {
+                username = project.findProperty("gpr.username") ?: ""
+                password = project.findProperty("gpr.token") ?: ""
+            }
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
