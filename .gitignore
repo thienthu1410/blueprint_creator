@@ -1,0 +1,38 @@
+# Thư mục build output
+/build/
+.gradle/
+out/
+
+# Gradle wrapper binary files
+/gradle/wrapper/gradle-wrapper.jar
+
+# Các file cache của IDE (VS Code, IntelliJ, Eclipse)
+/.idea/
+/.vscode/
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+# Dependency cache của Gradle (không cần vì có thể tải lại)
+/.gradle/
+/.gradle-cache/
+
+# File lock hoặc config tạm thời
+*.log
+*.lock
+
+# File hệ thống (MacOS, Windows)
+/.DS_Store
+Thumbs.db
+
+# Credentials (nếu có chứa thông tin nhạy cảm)
+gradle.properties
+
+# JARs, compiled files
+*.jar
+*.class
+
+# Generated files
+bin/
+libs/
